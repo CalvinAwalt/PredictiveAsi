@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Predictive ASI - Download</title>
+  <title>Predictive ASI - Downloads</title>
   <style>
     * {
       margin: 0;
@@ -20,20 +20,6 @@
     .container {
       max-width: 900px;
       margin: 0 auto;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 2rem;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid #cbd5e1;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: #0f172a;
-      letter-spacing: -0.01em;
     }
 
     .files-list {
@@ -68,12 +54,6 @@
       font-size: 0.95rem;
       color: #1e293b;
       word-break: break-all;
-    }
-
-    .file-desc {
-      font-size: 0.75rem;
-      color: #64748b;
-      margin-top: 0.25rem;
     }
 
     .download-btn {
@@ -114,13 +94,6 @@
       background: #059669;
     }
 
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.7rem;
-      color: #94a3b8;
-    }
-
     @media (max-width: 600px) {
       .file-item {
         flex-direction: column;
@@ -138,23 +111,17 @@
 </head>
 <body>
 <div class="container">
-  <div class="header">
-    <h1>📁 Predictive ASI Files</h1>
-  </div>
-
   <div class="download-all">
-    <button class="download-all-btn" id="downloadAllBtn">⬇️ Download All (7 files)</button>
+    <button class="download-all-btn" id="downloadAllBtn">⬇️ Download All</button>
   </div>
 
   <div class="files-list" id="fileList"></div>
-  <footer>Click any file to download — ready-to-run Python scripts and markdown documentation.</footer>
 </div>
 
 <script>
-  // Complete file contents - all original code from the repository
   const files = {};
 
-  // File 00: Ideas Worth Pursuing (Markdown)
+  // File 00
   files["00_IDEAS_WORTH_PURSUING.md"] = `# Ideas Worth Pursuing
 ## A distillation of the Calvin repository's genuine conceptual contributions
 
@@ -196,23 +163,9 @@ As a design principle for RL reward shaping: penalise actions whose ethical grad
 ## 7. Fractal governance: complexity scales exponentially with depth
 
 C(L) = e^{kL} where k = ln3/ln2 (Hausdorff dimension of the Cantor set ≈ 1.585). A testable hypothesis for neural scaling laws.
-
----
-
-## Summary table
-
-| Idea | Status | Next step |
-|------|--------|-----------|
-| Compile-time ethical constraints | Working prototype (file 03) | Build constraint DSL |
-| Wave-gossip tool routing | Working prototype | Benchmark on ToolBench |
-| Three-tensor decomposition | Conceptual | Transformer probes |
-| Self-replicating code ecosystem | Working prototype (file 01) | Add fitness function |
-| Φ_min as training signal | Approximate (file 05) | PyTorch loss term |
-| Ethical thermodynamics | PDE simulator | RL reward shaping |
-| Fractal governance | Hypothesis | Test scaling laws |
 `;
 
-  // File 01: Code Cell Ecosystem
+  // File 01
   files["01_code_cell_ecosystem.py"] = `"""
 Self-Replicating Code Ecosystem
 ================================
@@ -306,7 +259,7 @@ if __name__ == "__main__":
     print("Simulation complete.")
 `;
 
-  // File 02: Small World Brain
+  // File 02
   files["02_small_world_brain.py"] = `"""
 Small-World Neural Network with Self-Modification
 ==================================================
@@ -399,7 +352,7 @@ if __name__ == "__main__":
     brain.run()
 `;
 
-  // File 03: Ethical Constraint Framework
+  // File 03
   files["03_ethical_constraint_framework.py"] = `"""
 Ethical Constraint Framework
 ==============================
@@ -485,7 +438,7 @@ if __name__ == "__main__":
     print(f"Ethical evaluation: {result}")
 `;
 
-  // File 04: Fractional Calculus & Physics
+  // File 04
   files["04_fractional_calculus_physics.py"] = `"""
 Fractional Calculus & Physics Implementations
 ===============================================
@@ -553,7 +506,7 @@ if __name__ == "__main__":
         print(f"v={beta}c, γ={r.lorentz_factor():.3f}")
 `;
 
-  // File 05: Phi Field Simulation
+  // File 05
   files["05_phi_field_simulation.py"] = `"""
 Consciousness-Adjacent: Φ Computation & 3D Field Simulation
 =============================================================
@@ -588,7 +541,6 @@ class ThreeFieldSimulation:
     
     def run(self, steps: int = 20, coupling: float = 0.05):
         for t in range(steps):
-            # Simple diffusion and coupling
             for field in [self.R, self.G, self.B]:
                 shifted = (np.roll(field, 1, 0) + np.roll(field, -1, 0) +
                           np.roll(field, 1, 1) + np.roll(field, -1, 1) +
@@ -610,7 +562,7 @@ if __name__ == "__main__":
     print(f"Φ_total: {results['phi_total']:.3f}, MI(R,G): {results['mi_rg']:.3f}")
 `;
 
-  // File 06: Study Assistant
+  // File 06
   files["06_study_assistant.py"] = `"""
 Study Assistant with Spaced Repetition
 ========================================
@@ -688,23 +640,150 @@ if __name__ == "__main__":
     print("Study Assistant ready. Methods: pomodoro(), add_flashcard(), quiz(), stats()")
 `;
 
-  // File list metadata
-  const fileList = [
-    { name: "00_IDEAS_WORTH_PURSUING.md", desc: "Complete conceptual overview of all 7 ideas" },
-    { name: "01_code_cell_ecosystem.py", desc: "Self-replicating code ecosystem with AST mutation" },
-    { name: "02_small_world_brain.py", desc: "Small-world neural network with cortical columns" },
-    { name: "03_ethical_constraint_framework.py", desc: "Compile-time ethical constraints and V_net" },
-    { name: "04_fractional_calculus_physics.py", desc: "Fractional derivatives + ΛCDM cosmology" },
-    { name: "05_phi_field_simulation.py", desc: "Φ_min proxy and 3D coupled field simulation" },
-    { name: "06_study_assistant.py", desc: "Pomodoro timer, flashcards, spaced repetition" }
+  // File 07: Agentic Tool Router
+  files["agentic_tool_router.py"] = `"""
+Agentic Tool Selection Router
+==============================
+Wave-gossip propagation over a tool dependency graph to select the
+best next tool(s) for an LLM agent to invoke.
+"""
+
+from __future__ import annotations
+
+import math
+from dataclasses import dataclass, field
+from typing import Optional
+
+import torch
+import torch.nn.functional as F
+
+
+@dataclass
+class Tool:
+    name: str
+    description: str
+    embedding: torch.Tensor
+    depends_on: list[str] = field(default_factory=list)
+
+
+@dataclass
+class RouterConfig:
+    num_steps: int = 6
+    dt: float = 0.08
+    gamma: float = 0.04
+    top_k: int = 1
+    temperature: float = 1.0
+    token_coupling: float = 1.0
+
+
+def build_tool_graph(tools: list[Tool]) -> tuple[torch.Tensor, torch.Tensor]:
+    n = len(tools)
+    name_to_idx = {t.name: i for i, t in enumerate(tools)}
+    adj = torch.zeros(n, n)
+    for i, tool in enumerate(tools):
+        for dep_name in tool.depends_on:
+            j = name_to_idx.get(dep_name)
+            if j is not None:
+                adj[i, j] = 1.0
+    row_sums = adj.sum(dim=1, keepdim=True).clamp(min=1e-8)
+    gossip_matrix = adj / row_sums
+    return adj, gossip_matrix
+
+
+def build_embedding_matrix(tools: list[Tool]) -> torch.Tensor:
+    return torch.stack([t.embedding for t in tools], dim=0)
+
+
+def agentic_tool_router(
+    query_embedding: torch.Tensor,
+    tools: list[Tool],
+    config: RouterConfig = RouterConfig(),
+    recently_used: Optional[list[int]] = None,
+    forbidden: Optional[list[int]] = None,
+) -> tuple[list[int], torch.Tensor, torch.Tensor]:
+    num_tools = len(tools)
+    dim = query_embedding.shape[0]
+
+    adjacency, gossip_matrix = build_tool_graph(tools)
+    tool_embeddings = build_embedding_matrix(tools)
+
+    q_norm = F.normalize(query_embedding.unsqueeze(0), dim=-1)
+    e_norm = F.normalize(tool_embeddings, dim=-1)
+    similarity = (e_norm @ q_norm.T).squeeze(-1)
+    similarity_prior = (similarity + 1.0) / 2.0
+
+    state = torch.zeros(num_tools + 1, dim, dtype=torch.complex64)
+    state[0] = query_embedding.to(torch.complex64)
+    state[1:] = (tool_embeddings * similarity_prior.unsqueeze(-1)).to(torch.complex64)
+
+    degree = adjacency.sum(dim=1)
+    laplacian_tools = torch.diag(degree) - adjacency
+    full_laplacian = torch.zeros(num_tools + 1, num_tools + 1)
+    full_laplacian[1:, 1:] = laplacian_tools
+    token_coupling_weights = similarity_prior * config.token_coupling
+    full_laplacian[0, 1:] = -token_coupling_weights
+    full_laplacian[1:, 0] = -token_coupling_weights
+    full_laplacian[0, 0] = token_coupling_weights.sum()
+    full_laplacian_c = full_laplacian.to(torch.complex64)
+    gossip_matrix_c = gossip_matrix.to(torch.complex64)
+
+    for step in range(config.num_steps):
+        wave_delta = -1j * (full_laplacian_c @ state)
+        tool_state = state[1:]
+        neighbor_avg = gossip_matrix_c @ tool_state
+        gossip_delta = torch.zeros_like(state)
+        gossip_delta[1:] = config.gamma * (neighbor_avg - tool_state)
+        state = state + config.dt * (wave_delta + gossip_delta)
+        norms = torch.norm(state, dim=-1, keepdim=True).clamp(min=1e-8)
+        state = state * (1.0 - 0.1) + state / norms * 0.1
+
+    tool_energies = torch.abs(state[1:]).pow(2).sum(dim=-1)
+    blended_energies = tool_energies + 0.2 * similarity_prior
+
+    if forbidden:
+        blended_energies[forbidden] = -1e9
+    if recently_used:
+        recency_penalty = torch.zeros(num_tools)
+        recency_penalty[recently_used] = 0.3
+        blended_energies = blended_energies - recency_penalty
+
+    routing_probs = F.softmax(blended_energies / config.temperature, dim=0)
+    top_k_indices = torch.topk(blended_energies, k=config.top_k).indices.tolist()
+    return top_k_indices, routing_probs, blended_energies
+
+
+if __name__ == "__main__":
+    torch.manual_seed(42)
+    dim = 64
+    base_search = F.normalize(torch.randn(dim), dim=0)
+    tools = [
+        Tool("web_search", "Search the web", base_search + 0.05 * torch.randn(dim), depends_on=[]),
+        Tool("query_rewriter", "Rewrite ambiguous queries", base_search + 0.1 * torch.randn(dim), depends_on=["web_search"]),
+        Tool("summariser", "Summarise retrieved text", F.normalize(torch.randn(dim), dim=0), depends_on=["web_search"]),
+        Tool("code_executor", "Execute Python code", F.normalize(torch.randn(dim), dim=0), depends_on=[]),
+        Tool("calculator", "Evaluate arithmetic expressions", F.normalize(torch.randn(dim), dim=0), depends_on=["code_executor"]),
+    ]
+    query = base_search + 0.02 * torch.randn(dim)
+    config = RouterConfig(num_steps=6, top_k=2, temperature=0.5)
+    selected, probs, energies = agentic_tool_router(query, tools, config)
+    print("=== Agentic Tool Router — smoke test ===")
+    print(f"Selected tools : {[tools[i].name for i in selected]}")
+`;
+
+  const fileNames = [
+    "00_IDEAS_WORTH_PURSUING.md",
+    "01_code_cell_ecosystem.py",
+    "02_small_world_brain.py",
+    "03_ethical_constraint_framework.py",
+    "04_fractional_calculus_physics.py",
+    "05_phi_field_simulation.py",
+    "06_study_assistant.py",
+    "agentic_tool_router.py"
   ];
 
   function downloadFile(filename) {
     const content = files[filename];
-    if (!content) {
-      alert(`Error: ${filename} not found`);
-      return;
-    }
+    if (!content) return;
     const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
     const link = document.createElement('a');
     const url = URL.createObjectURL(blob);
@@ -717,8 +796,7 @@ if __name__ == "__main__":
   }
 
   function downloadAll() {
-    const names = Object.keys(files);
-    names.forEach((name, idx) => {
+    fileNames.forEach((name, idx) => {
       setTimeout(() => downloadFile(name), idx * 200);
     });
   }
@@ -726,24 +804,19 @@ if __name__ == "__main__":
   function render() {
     const container = document.getElementById('fileList');
     container.innerHTML = '';
-    fileList.forEach(file => {
+    fileNames.forEach(name => {
       const item = document.createElement('div');
       item.className = 'file-item';
       item.innerHTML = `
         <div class="file-info">
-          <div class="file-name">📄 ${file.name}</div>
-          <div class="file-desc">${file.desc}</div>
+          <div class="file-name">📄 ${name}</div>
         </div>
-        <button class="download-btn" data-filename="${file.name}">⬇️ Download</button>
+        <button class="download-btn" data-filename="${name}">⬇️ Download</button>
       `;
       container.appendChild(item);
     });
-
     document.querySelectorAll('.download-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filename = btn.getAttribute('data-filename');
-        downloadFile(filename);
-      });
+      btn.addEventListener('click', () => downloadFile(btn.getAttribute('data-filename')));
     });
   }
 
